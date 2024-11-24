@@ -1,0 +1,112 @@
+{% load static %}
+<header>
+    <div class="menu">
+      <div style="display: flex;">
+        <div class="contactsS">
+          <button id="btnSearch"><i class="fa fa-search"></i></button>
+          <div class="search" id="search">
+            <form action="" role="search" method="get">
+              <input type="text" name="search" placeholder="Search..." />
+              <button type="submit" role="button">
+                <i class="fa fa-search"></i>
+              </button>
+            </form>
+          </div>
+          <img src="{% static 'img/header-phone.png'%}">
+          <div class="whatsapp">
+            <a href="#">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+          <div class="contact">
+            <a href="#"><img src="{% static 'img/header-contant.png'%}"></a>
+          </div>
+        </div>
+        <div class="logo">
+          <a href="#">
+            <img src="{% static 'img/1.png'%}" />
+          </a>
+        </div>
+      </div>
+      <div class="showMenu">
+        <div class="contact">
+          <button id="btnMenu"><svg width="40" height="40" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path></svg></button>
+        </div>
+      </div>
+      <div class="contactsF">
+        <div>
+          <ul>
+            <li>
+              <a href="#">About sabar health</a>
+            </li>
+            <hr />
+            <li id="langS">
+              <a href="#">English</a>
+              <ul id="langUnS">
+                <li>
+                  <a href="#">עברית</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="search">
+          <form action="" role="search" method="get">
+            <input type="text" name="search" placeholder="Search..." />
+            <button type="submit" role="button">
+              <i class="fa fa-search"></i>
+            </button>
+          </form>
+        </div>
+        <div class="contact">
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="whatsapp">
+          <a href="#">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+        <div>
+          <a rel="nofollow" href="tel:*2590"> *2590 </a>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div id="navbar" style="grid-template-columns: repeat({%if count <= 4%} 4 {%else%} {{count}} {%endif%}, 1fr);">
+      <div id="ulNavbar">
+        {%if classesName%}
+          {%for className in classesName%}
+            <ul class="ulNavbar">
+              <li id="showDialoge1">
+                <p>{{className.serviceClass}}</p>
+                <ul class="dialoge" id="dialoge1">
+                  <div class="mainDiv">
+                    {%for service in services%}
+                      {%if service.serviceClass == className.serviceClass%}
+                        <li style="padding: 1rem;">
+                          <a href="{{service.name}}">{{service.name}}</a>
+                        </li>
+                      {%endif%}
+                    {%endfor%}
+                  </div>
+                  {%for service in services%}
+                    {%if service.serviceClass == className.serviceClass and forloop.counter <= count%}
+                      <img src="../../media/{{service.img}}" style="width: 18rem;"/>
+                    {%endif%}
+                  {%endfor%}
+                </ul>
+              </li>
+            </ul>
+          {%endfor%}
+        {%endif%}
+      </div>
+    </div>
+  </header>
+  <area/>
+
+
+<script>
+    const png2 = '{% static "img/2.png" %}'
+    const png4 = '{% static "img/4.png" %}'
+    const png6 = '{% static "img/6.png" %}'
+</script>

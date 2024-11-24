@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <main>
+        <section style="background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: clamp(9.1rem, 17.9vw, 34.7rem);
+        display: grid;background-image: url(../../media/{{service.img}});">
+          <h1>{{service.name}}</h1>
+        </section>
+        <div class="serviceContent">
+          <div class="service">
+            <h2 style="font-size: 2rem;">{{service.name}}</h2><br>
+            <div>{{service.shortContent}}</div><br>
+            <div>{{service.mainContent|safe}}</div>
+          </div>
+          <div class="services">
+            {%for service in services%}
+              {%if service.serviceClass == sClass%}
+                <div><a href="{{service.name}}">{{service.name}}</a></div>
+              {%endif%}
+            {%endfor%}
+          </div>
+        </div>
+        <div>
+          <form method="post" id="form">
+            {%csrf_token%}
+            <div style="display: flex;flex-direction: row;align-items: center;margin: .5rem;">
+              <div style="margin-right: 1rem;">
+                <img src="{% static 'img/8.png'%}">
+              </div>
+              <div>
+                <h3>Want to consult? We're here every hour. Write to us.</h3>
+                <span>For more details or to schedule a free consultation call, please leave your details</span>
+              </div>
+            </div>
+            <input type="text" name="service" value="{{service.name}}" placeholder="Full Name" readonly style="border: none;width: 30rem;">
+            <div class="inputs">
+              <input type="text" name="name" placeholder="Full Name" required>
+              <input type="tel" name="phone" placeholder="Phone" required>
+              <input type="text" name="city" placeholder="City" required>
+              <input type="email" name="email" placeholder="Email" required>
+              <textarea name="msg" placeholder="Message" required></textarea>
+            </div>
+            <div>
+              <input type="checkbox" name="agree" id="check">
+              <label for="check" id="label">I agree to receive information from this website, including marketing content, by email or mobile</span>
+            </div>
+            <button type="button" id="btnForm">Send</button>
+          </form>
+        </div>
+  </main>
+{% endblock content %}

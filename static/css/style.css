@@ -1,0 +1,580 @@
+*{
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-size: 1.1rem;
+}
+body{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: .5s;
+}
+a{
+    text-decoration-line: none  ;
+}
+header{
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    z-index: 10;
+    border-bottom: 1px solid #aaa;
+}
+area{height: 11rem;}
+.menu{
+    display: flex;
+    flex-direction: row;
+    margin: .8rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu a{
+    color: #60bb46;
+}
+.logo,.contactsS{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.logo{
+    width: 270px;
+}
+.contactsF{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.contactsS{
+    display: none;
+}
+.contactsS button{
+    border: none;
+    background-color: transparent;
+    margin-right: .5rem;
+    cursor: pointer;
+}
+.showMenu{
+    display: none;
+}
+ul{
+    list-style: none;
+    display: inline-flex;
+    background-color: #fff;
+}
+li{
+    margin: 0 .8rem;
+}
+#langUnS{
+    position: absolute;
+    top: 5rem;
+    right: 25rem;
+    padding: 1rem 5rem 1rem 1rem;
+    border: solid 1px #ccc;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#langS:hover #langUnS,#langUnS:hover {
+    opacity: 1;
+    visibility: visible;
+}
+#langS:not(:hover) #langUnS:not(:hover) {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+.menu div{
+    margin: 0 .4rem;
+}
+.menu form{
+    background-color: #fff;
+    border: solid 1px #ddd;
+    padding: .5rem;
+    border-radius: 50PX;
+    display: flex;
+    align-items: center;
+}
+.search form input,.search form button{
+    border: none;
+    background-color: #fff;
+    height: 25px;
+    outline: none;
+}
+.search form input{
+    width: 10rem;
+}
+.search form input::placeholder,.search i{
+    color: #ddd;
+}
+.contact a{
+    padding: .5rem 1rem;
+    border-radius: 50px;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.contact a,.contact button{
+    background: linear-gradient(90deg,#00a4c7 0,#05bcd9 50%);
+}
+.contact a:hover,.contact button:hover{
+    background: linear-gradient(90deg,#3bbd81 0,#60bb46 50%);
+}
+.contact button{
+    background-color: transparent;
+    border: none;
+    border: 10px;
+    width: 45px;
+    height: 40px;
+    cursor: pointer;
+}
+.whatsapp a i{
+    width: 38px;
+    height: 38px;
+    color: #fff;
+    border-radius: 50%;
+    background-color: #24cc63;
+    padding: .4rem;
+    transition: .5s;
+    border: solid .1rem #24cc63;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+.whatsapp a i:hover{
+    color: #24cc63;
+    background-color: #fff;
+    border: solid .1rem #24cc63;
+    transition: .5s;
+}
+#navbar{
+    margin: 1rem;
+}
+#navbar .ulNavbar{
+    width: 100%;
+    justify-content: space-around;
+    height: 46px;
+}
+#navbar a{
+    color: #000;
+}
+#navbar .dialoge{
+    position: absolute;
+    top: 12rem;
+    left: 0rem;
+    justify-content: start!important;
+    padding: 1rem;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#navbar #showDialoge1:hover #dialoge1,#navbar #dialoge1:hover,#navbar #showDialoge2:hover #dialoge2,#navbar #dialoge2:hover,#navbar #showDialoge3:hover #dialoge3,#navbar #dialoge3:hover,#navbar #showDialoge4:hover #dialoge4,#navbar #dialoge4:hover{
+    opacity: 1;
+    visibility: visible;
+}
+#navbar #showDialoge1:not(:hover) #navbar #dialoge1:not(:hover),#navbar #showDialoge2:not(:hover) #navbar #dialoge2:not(:hover),#navbar #showDialoge3:not(:hover) #navbar #dialoge3:not(:hover),#navbar #showDialoge4:not(:hover) #navbar #dialoge4:not(:hover){
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+}
+#navbar div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#navbar .mainDiv{
+    flex-direction: row;
+}
+#navbar .li:hover{
+    border-bottom: solid #60bb46;
+}
+.a{
+    display: none;
+}
+main{
+    flex-grow: 1;
+}
+.aTitle{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 13rem;
+    right: 1rem;
+    z-index: 0;
+    color: #52545a;
+}
+.title{
+    display: flex;
+    background-image: URl(./img/5.png);
+    height: 30vh;
+    width: 40vw;
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+    background-size: cover;
+}
+.mainContents{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+}
+.mainContents div{
+    position: relative;
+    background-color: #7ad0e2;
+    text-align: center;
+    font-size: 2rem;
+}
+.mainContents div a{
+    color: #fff;
+}
+.content{
+    position: absolute!important;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #5fbb47!important;
+    padding: 1rem;
+    overflow-y: auto;
+    transition-delay: 1s;
+    opacity: 0;
+}
+@keyframes show {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+.mainContents div:hover .content{
+    animation: show 1s forwards;
+}
+.content::-webkit-scrollbar{
+    width: 10px;
+}
+.content::-webkit-scrollbar-track{
+    background: #ccc;
+}
+.content::-webkit-scrollbar-thumb{
+    background-color: #888;
+    border-radius: 10px;
+}
+footer{
+    background-image: url("../img/footer-background.png");
+    background-size: cover;
+    color: #fff;
+    margin: 1rem 0 0 0;
+}
+main form{
+    background: linear-gradient(180deg,#3bbd81 0,#3faa97 100%);
+    border-radius: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    color: #fff;
+}
+main form input{
+    border: solid #eee 1px;
+    background-color: transparent;
+    padding: .5rem;
+    margin: .5rem;
+    color: #fff;
+    outline: none;
+}
+main form input::placeholder{
+    color: #fff;
+}
+.inputs{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 10px;
+    margin: 1rem;
+}
+main form button{
+    background-color: #fff;
+    border: none;
+    padding: 1rem 5rem;
+    border-radius: 1rem;
+    color: #3bbd81;
+    margin: 1rem 2rem;
+    cursor: pointer;
+    transition: .5s;
+}
+main form button:hover{
+    background-color: #3bbd81;
+    color: #fff;
+    transition: .5s;
+}
+.footerContents{
+    padding: 1rem;
+}
+.footerContents div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.footerContents i{
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6dc692;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: .3rem;
+    transition: .5s;
+    margin: 0 .3rem;
+}
+.footerContents i:hover{
+    color: #fff;
+    background-color: #6dc692;
+    transition: .5s;
+}
+.footerMenu{
+    background-color: transparent;
+    margin: 1rem;
+}
+.footerMenu ul{
+    flex-direction: column;
+    background-color: transparent;
+    margin: 1rem;
+}
+footer a,.services a{
+    color: #fff;
+    transition: .5s;
+}
+footer a:hover{
+    color: #60bb46;
+    transition: .5s;
+}
+.footerMenu li{
+    margin: .5rem;
+}
+.contactInfo,.contactInfo div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: .3rem;
+}
+#menu{
+    width: 100%;
+    height: 100vh;
+    z-index: 20;
+    position: fixed;
+}
+#menuShowed{
+    position: fixed;
+    right: 0;
+    z-index: 22;
+    width: 50%;
+    height: 100vh;
+    background-color: #fff;
+    border-radius: 10px 0 0 10px;
+    overflow-y: auto;
+}
+#menuShowed .dialoge{
+    position: absolute;
+    justify-content: start!important;
+    padding: 1rem;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+#menuShowed #showDialoge1:hover #dialoge1,#menuShowed #dialoge1:hover,#menuShowed #showDialoge2:hover #dialoge2,#menuShowed #dialoge2:hover,#menuShowed #showDialoge3:hover #dialoge3,#menuShowed #dialoge3:hover,#menuShowed #showDialoge4:hover #dialoge4,#menuShowed #dialoge4:hover{
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+}
+#menuShowed #showDialoge1:not(:hover) #menuShowed #dialoge1:not(:hover),#menuShowed #showDialoge2:not(:hover) #menuShowed #dialoge2:not(:hover),#menuShowed #showDialoge3:not(:hover) #menuShowed #dialoge3:not(:hover),#menuShowed #showDialoge4:not(:hover) #dialoge4:not(:hover){
+    opacity: 0;
+    visibility: hidden;
+}
+#dialoge1hr,#dialoge2hr,#dialoge3hr,#dialoge4hr{
+    display: none;
+}
+#menuShowed .dialoge img{
+    display: none;
+}
+.cancel{
+    width: 100%;
+    height: 100vh;
+    background-color: #00000075;
+    cursor: pointer;
+}
+section h1{
+    width: min(73.4rem + 9.7vw,55%);
+    font-size: clamp(3.6rem,7vw,9.6rem);
+    line-height: .888;
+    text-align: start;
+    margin-inline-start: auto;
+    padding: 1rem;
+    color: #60bb46;
+}
+.serviceContent{
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.service{
+    width: 65vw;
+    margin: 1rem;
+}
+.services{
+    background: linear-gradient(90deg,#3bbd81 0,#3faa97 100%);
+    border-radius: 1rem;
+    position: sticky;
+    top: 12rem;
+    height: max-content;
+    margin: 1rem;
+}
+.services div{
+    margin: 1rem;
+    border-bottom: 1px solid #666;
+}
+.services a:hover{
+    color: #255a68;
+}
+@media screen and (max-width:1115px){
+    .contactsF{
+        display: none;
+    }
+    .logo{
+        width: 220px;
+    }
+    .contactsS{
+        display: flex;
+    }
+    .showMenu{
+        display: block;
+    }
+    #search{
+        display: block;
+        position: absolute;
+        top: 4.5rem;
+        left: 0.5rem;
+        display: none;
+    }
+    #navbar{
+        display: none;
+    }
+    .a{
+        display: block;
+    }
+    #menuShowed .ulNavbar{
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 90vh;
+        color: #000;
+    }
+    #menuShowed .ulNavbar a{
+        color: #000;
+    }
+    #menuShowed li{
+        margin: .5rem;
+    }
+    #menuShowed #langUnS{
+        bottom: 0;
+        top: initial;
+        right: initial;
+    }
+    .mainDiv li a{
+        color: #24cc63 !important;
+    }
+    .title{
+        width: 40vw;
+        height: 22vh;
+    }
+    .aTitle h1{
+        font-size: 1.8rem!important;
+        margin: .5rem 0 0 .5rem;
+    }
+    area{
+        height: 75px;
+    }
+}
+@media screen and (min-width:300px) and (max-width:719px){
+    .contactsS .contact{
+        display: none;
+    }
+    .logo{
+        width: 120px;
+    }
+    .menu{
+        justify-content: initial;
+    }
+    .aTitle{
+        position: relative;
+        top: 0;
+    }
+    .title{
+        width: 100vw!important;
+        height: 150px!important;
+    }
+    .aTitle h1{
+        font-size: 1.5rem!important;
+        margin: 0 0 0 3rem;
+    }
+    .mainContents{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        padding: 10px;
+    }
+    footer form div{
+        align-items: initial!important;
+    }
+    footer form div img{
+        width: 150px;
+    }
+    footer form div h3{
+        font-size: 1rem;
+    }
+    footer form div span{
+        font-size: .8rem;
+    }
+    footer div{
+        flex-direction: column;
+    }
+    .inputs{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+        padding: 10px;
+        margin: 1rem;
+    }
+    .contactInfo{
+        flex-direction: column;
+    }
+    .contactInfo div{
+        height: 120px;
+        width: 100% !important;
+        flex-direction: column;
+        justify-content: inherit;
+        align-items: inherit;
+    }
+    #menuShowed{
+        width: 75%;
+    }
+    section h1{
+        font-size: 1.5rem;
+    }
+    .services{
+        display: none;
+    }
+    .service{
+        width: 100%;
+    }
+}
