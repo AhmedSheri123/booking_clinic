@@ -1,24 +1,28 @@
+
 <VirtualHost *:443>
-    ServerAdmin webmaster@localhost
-    ServerName example.com
-    ServerAlias www.example.com
-    DocumentRoot /var/www/booking_clinic
-    <Directory /var/www/booking_clinic>
-        AllowOverride all
-        Require all granted
-        Options FollowSymlinks
-        Allow from all
-    </Directory>
 
-    Alias /media /var/www/booking_clinic/media
+    ServerAdmin admin@softmsg.com
+    ServerName softmsg.com
+    ServerAlias www.softmsg.com
+
+    DocumentRoot /var/www/booking_clinic/
+
+    SSLEngine on
+    SSLCertificateFile /var/www/booking_clinic/ssl/amanhome_org.crt
+    SSLCertificateKeyFile /var/www/booking_clinic/ssl/amanhome.org.key
+    SSLCertificateChainFile /var/www/booking_clinic/ssl/amanhome_org.ca-bundle
+
+    ErrorLog ${APACHE_LOG_DIR}/amanhome_org_error.log
+    CustomLog ${APACHE_LOG_DIR}/amanhome_org_access.log combined
+
     Alias /static /var/www/booking_clinic/static
-
     <Directory /var/www/booking_clinic/static>
         Require all granted
     </Directory>
 
+    Alias /media /var/www/booking_clinic/media
     <Directory /var/www/booking_clinic/media>
-    Require all granted
+            Require all granted
     </Directory>
 
     <Directory /var/www/booking_clinic/proj>
@@ -27,8 +31,7 @@
         </Files>
     </Directory>
 
-
-    WSGIDaemonProcess proj python-path=/var/www/booking_clinic python-home=/var/www/booking_clinic/env
+    WSGIDaemonProcess proj python-home=/var/www/booking_clinic/env python-path=/var/www/booking_clinic
     WSGIProcessGroup proj
     WSGIScriptAlias / /var/www/booking_clinic/proj/wsgi.py
 

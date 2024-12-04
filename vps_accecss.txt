@@ -6,5 +6,5 @@ git pull
 systemctl restart apache2
 
 
-
+journalctl -xeu apache2.service
 sudo chmod -R 777 media/
