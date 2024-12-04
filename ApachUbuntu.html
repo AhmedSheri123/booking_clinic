@@ -1,35 +1,35 @@
-<VirtualHost *:80>
+<VirtualHost *:443>
     ServerAdmin webmaster@localhost
     ServerName example.com
     ServerAlias www.example.com
-    DocumentRoot /var/www/PatientManagement
-    <Directory /var/www/PatientManagement>
+    DocumentRoot /var/www/booking_clinic
+    <Directory /var/www/booking_clinic>
         AllowOverride all
         Require all granted
         Options FollowSymlinks
         Allow from all
     </Directory>
 
-    Alias /media /var/www/PatientManagement/media
-    Alias /static /var/www/PatientManagement/static
+    Alias /media /var/www/booking_clinic/media
+    Alias /static /var/www/booking_clinic/static
 
-    <Directory /var/www/PatientManagement/static>
+    <Directory /var/www/booking_clinic/static>
         Require all granted
     </Directory>
 
-    <Directory /var/www/PatientManagement/media>
+    <Directory /var/www/booking_clinic/media>
     Require all granted
     </Directory>
 
-    <Directory /var/www/PatientManagement/PatientManagement>
+    <Directory /var/www/booking_clinic/proj>
         <Files wsgi.py>
             Require all granted
         </Files>
     </Directory>
 
 
-    WSGIDaemonProcess PatientManagement python-path=/var/www/PatientManagement python-home=/var/www/PatientManagement/env
-    WSGIProcessGroup PatientManagement
-    WSGIScriptAlias / /var/www/PatientManagement/PatientManagement/wsgi.py
+    WSGIDaemonProcess proj python-path=/var/www/booking_clinic python-home=/var/www/booking_clinic/env
+    WSGIProcessGroup proj
+    WSGIScriptAlias / /var/www/booking_clinic/proj/wsgi.py
 
 </VirtualHost>
