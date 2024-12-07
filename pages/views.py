@@ -15,7 +15,7 @@ def index(request):
     }
     return render(request, 'pages/index.html',context)
 
-def service(request,serviceName):
+def service(request, serviceName):
     service = get_object_or_404(Service,name=serviceName)
     sClasses=Service.objects.filter(name__icontains=service)
     for sClass in sClasses:

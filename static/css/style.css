@@ -16,6 +16,7 @@ a{
     text-decoration-line: none  ;
 }
 header{
+    min-height: 200px;
     position: fixed;
     width: 100%;
     background-color: #fff;
@@ -63,8 +64,12 @@ ul{
     display: inline-flex;
     background-color: #fff;
 }
-li{
-    margin: 0 .8rem;
+.contactsF li{
+    margin: 0 .5rem;
+}
+.ulNavbar{
+    padding: 0 .8rem;
+    border-right: 1px solid #ccc;
 }
 #langUnS{
     position: absolute;
@@ -151,12 +156,13 @@ li{
     transition: .5s;
 }
 #navbar{
-    margin: 1rem;
+    display: grid;
+    margin-bottom: 0.5rem;
 }
 #navbar .ulNavbar{
     width: 100%;
     justify-content: space-around;
-    height: 46px;
+    height: max-content;
 }
 #navbar a{
     color: #000;
@@ -182,12 +188,8 @@ li{
     transition: opacity 1s ease, visibility 1s ease;
 }
 #navbar div{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-#navbar .mainDiv{
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 #navbar .li:hover{
     border-bottom: solid #60bb46;
@@ -279,7 +281,7 @@ main form{
     padding: 1rem;
     color: #fff;
 }
-main form input{
+main form input, main form textarea{
     border: solid #eee 1px;
     background-color: transparent;
     padding: .5rem;
@@ -287,7 +289,7 @@ main form input{
     color: #fff;
     outline: none;
 }
-main form input::placeholder{
+main form input::placeholder, main form textarea::placeholder{
     color: #fff;
 }
 .inputs{
@@ -342,6 +344,8 @@ main form button:hover{
 .footerMenu{
     background-color: transparent;
     margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }
 .footerMenu ul{
     flex-direction: column;
@@ -447,6 +451,9 @@ section h1{
     color: #255a68;
 }
 @media screen and (max-width:1115px){
+    header{
+        min-height: initial;
+    }
     .contactsF{
         display: none;
     }
@@ -474,9 +481,6 @@ section h1{
     }
     #menuShowed .ulNavbar{
         width: 100%;
-        flex-direction: column;
-        justify-content: space-around;
-        height: 90vh;
         color: #000;
     }
     #menuShowed .ulNavbar a{
