@@ -170,7 +170,7 @@ ul{
 #navbar .dialoge{
     position: absolute;
     top: 12rem;
-    left: 0rem;
+    /* left: 0rem; */
     justify-content: start!important;
     padding: 1rem;
     display: flex;

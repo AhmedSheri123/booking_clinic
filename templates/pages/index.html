@@ -8,11 +8,11 @@
           <a href="#" class="aTitle">
             <div class="title">
               <div style="padding: 0 1rem 1rem 0;">
-                <h1 style="font-size: 2.3rem;color: #fff;">Hospitalization system</h1>
+                <h1 style="font-size: 2.3rem;color: #fff;">מערכת אשפוז</h1>
               </div>
             </div>
             <div>
-              <span style="font-size: 1.8rem;font-family: Cookie;">The largest in Israel</span>
+              <span style="font-size: 1.8rem;font-family: Cookie;">הגדול בישראל</span>
             </div>
           </a>
         </div>
@@ -43,7 +43,7 @@
           {%endfor%}
           {%else%}
             {%if 'search' not in request.GET%}
-              <h1 style="font-size: 2.5rem;">No services have been added yet</h1>
+              <h1 style="font-size: 2.5rem;">עדיין לא נוספו שירותים</h1>
             {%endif%}
         {%endif%}
         {%if results and 'search' in request.GET%}
@@ -69,7 +69,7 @@
           {%endfor%}
           {%else%}
             {%if 'search' in request.GET%}
-              <h1 style="font-size: 2.5rem;">No search results</h1>
+              <h1 style="font-size: 2.5rem;">אין תוצאות חיפוש</h1>
             {%endif%}
         {%endif%}
       </div>
