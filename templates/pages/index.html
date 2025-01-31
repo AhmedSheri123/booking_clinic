@@ -23,9 +23,9 @@
         {{services.length}}
           {%for service in services%}
             {%if service.isActaive%}
-              <div>
-                <a href="{{service.name}}">
-                  <img src="../../media/{{service.img}}" style="height: 150px;background-size: cover;">
+              <div style="box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.09);">
+                <a href="{{service.name}}" >
+                  <img src="../../media/{{service.img}}" style="width: 100%; background-size: cover;padding: 30px;">
                   <div>
                     <h2>{{service.name}}</h2>
                     <img src="{% static 'img/7.png'%}">

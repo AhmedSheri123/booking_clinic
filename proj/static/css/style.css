@@ -229,12 +229,15 @@ main{
 }
 .mainContents div{
     position: relative;
-    background-color: #7ad0e2;
+    /* background-color: #7ad0e2; */
     text-align: center;
     font-size: 2rem;
 }
 .mainContents div a{
-    color: #fff;
+    color: #7ad0e2;
+}
+.mainContents div p{
+    color: #ffffff;
 }
 .content{
     position: absolute!important;
@@ -535,7 +538,7 @@ section h1{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 10px;
-        padding: 10px;
+        padding: 25px;
     }
     footer form div{
         align-items: initial!important;
